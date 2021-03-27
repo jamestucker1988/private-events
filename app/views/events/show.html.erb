@@ -7,3 +7,9 @@
     <em><%= @event.date.to_s.split(' ')[1] %></em>
 </small>
 </p>
+
+<br>
+<h5>List of Attendees</h5>
+<% @event.attendees.each do |attendee|%>
+    <p><strong><%= attendee.name %></strong></p>
+<% end %>
