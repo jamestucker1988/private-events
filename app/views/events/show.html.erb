@@ -1,0 +1,9 @@
+<h5><%= @event.name %><br><small>Owner: <%= @event.creator.name  %> </small></h5>
+<p><%= @event.description %></p>
+<p><strong>Location: </strong><small><%= @event.location %></small></p>
+<p><strong>Date: </strong>
+<small>
+    <strong><%= @event.date.to_s.split(' ').first %> </strong>
+    <em><%= @event.date.to_s.split(' ')[1] %></em>
+</small>
+</p>
