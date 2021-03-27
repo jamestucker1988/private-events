@@ -1,19 +1,19 @@
 class UsersController < ApplicationController
   def new
     @user = User.new
-
   end
+
   def create
     @user = User.create(user_params)
     if @user.save
-      redirect_to 'users/new', flash[:notice]='new use created'
+      redirect_to user_path(@user)
     else
       render :new
     end
-
   end
+  
   def show
-    @user = User.find_by(id:session[:current_user_id])
+    @user = User.find(params[:id])
   end
 
   private

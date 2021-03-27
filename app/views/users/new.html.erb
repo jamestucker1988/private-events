@@ -1,0 +1,9 @@
+<h1>Create Account</h1>
+<%= form_for(@user) do |f| %>
+	<div>
+    	<%= f.text_field :name, autofocus: true, placeholder: "Enter a username" %>
+	</div>
+	<div>
+  		<%= f.submit %>
+	</div>
+<% end %>
