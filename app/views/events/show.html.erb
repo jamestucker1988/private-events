@@ -13,3 +13,8 @@
 <% @event.attendees.each do |attendee|%>
     <p><strong><%= attendee.name %></strong></p>
 <% end %>
+<br>
+<h5 class="card-title border-bottom pb-2">Invite Friends</h5>
+<% @users.each do |user| %>
+    <p><%= user.name %> &mdash; <%= link_to 'Invite', invite_event_path %></p>
+<% end %>

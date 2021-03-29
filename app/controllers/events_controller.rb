@@ -22,9 +22,13 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    @event.attendees.each do |a|
-      @users = User.where.not(name: a.name).where.not(name: @event.creator.name)
-    end
+    @users = User.where.not(name: @event.creator.name)
+  end
+
+  def invite
+    @event = Event.find(params[:id])
+    @event.attendees << User.where.not(name: @event.creator.name)
+    redirect_to current_user
   end
 
   private
