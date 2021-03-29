@@ -1,0 +1,12 @@
+<h4><%= title %></h4>
+<% obj.each do |event| %>
+	<h5><%= link_to event.name, event_path(event) %></h5>
+    <p><%= event.description %></p>
+    <p><strong>Location: </strong><small><%= event.location %></small></p>
+    <p><strong>Date: </strong>
+    <small>
+        <strong><%= event.date.to_s.split(' ').first %> </strong>
+        <em><%= event.date.to_s.split(' ')[1] %></em>
+    </small>
+    </p>
+<% end %>

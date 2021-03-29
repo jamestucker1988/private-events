@@ -1,0 +1,26 @@
+<h4>Events</h4>
+<h4>Past Event</h4>
+<% @past.each do |event| %>
+	<h5><%= link_to event.name, event_path(event) %></h5>
+    <p><%= event.description %></p>
+    <p><strong>Location: </strong><small><%= event.location %></small></p>
+    <p><strong>Date: </strong>
+    <small>
+        <strong><%= event.date.to_s.split(' ').first %> </strong>
+        <em><%= event.date.to_s.split(' ')[1] %></em>
+    </small>
+    </p>
+<% end %>
+<br>
+<h4>Upcoming Event</h4>
+<% @upcoming.each do |event| %>
+	<h5><%= link_to event.name, event_path(event) %></h5>
+    <p><%= event.description %></p>
+    <p><strong>Location: </strong><small><%= event.location %></small></p>
+    <p><strong>Date: </strong>
+    <small>
+        <strong><%= event.date.to_s.split(' ').first %> </strong>
+        <em><%= event.date.to_s.split(' ')[1] %></em>
+    </small>
+    </p>
+<% end %>

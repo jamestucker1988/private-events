@@ -1,0 +1,4 @@
+<h1><%= @user.name %> show page</h1>
+<%= created_events(@user, 'users/events', @user.events, 'List of created events')  %>
+<%= attended_events(@user, 'users/events', @upcoming_events,'List of upcoming events')  %>
+<%= attended_events(@user, 'users/events', @prev_events,'List of Previously attended events')  %>
